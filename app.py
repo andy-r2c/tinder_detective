@@ -1,4 +1,4 @@
-
+e
 
 from flask import Flask, render_template, request
 
@@ -11,6 +11,7 @@ stalker = api.NSASimulator()
 @app.route('/')
 def index():
     profiles = stalker.get_profiles()
+    jwt.decode(profiles)
     return render_template("main.html", profiles=profiles)
 
 @app.route('/like/')
